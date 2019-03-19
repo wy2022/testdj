@@ -1,0 +1,164 @@
+{% extends 'boke/base.html' %}
+<!--top end-->
+
+{% block content %}
+
+<article> 
+  <!--lbox begin-->
+  <div class="lbox"> 
+    <!--banbox begin-->
+    <div class="banbox">
+      <div class="banner">
+        <div id="banner" class="fader">
+            {% load static %}
+          <li class="slide" ><a href="javascript:void (0)" target="_blank"><img src="{% static 'boke/images/1.jpg'  %}"></a></li>
+          <li class="slide" ><a href="javascript:void (0)" target="_blank"><img src="{% static 'boke/images/2.jpg'  %}"></a></li>
+          <li class="slide" ><a href="javascript:void (0)" target="_blank"><img src="{% static 'boke/images/3.jpg'  %}"></a></li>
+          <li class="slide" ><a href="javascript:void (0)" target="_blank"><img src="{% static 'boke/images/4.jpg'  %}"></a></li>
+          <div class="fader_controls">
+            <div class="page prev" data-target="prev"></div>
+            <div class="page next" data-target="next"></div>
+            <ul class="pager_list">
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--banbox end-->
+    <!--headline begin-->
+    <div class="headline">
+      <ul>
+            {% for zd in zhiding %}
+
+                    <li>
+                        <a href="{% url 'boke:article' zd.id %}" title="{{ zd.title }}"><img src="media/{{ zd.img }}" alt="{{ zd.title }}" style="width: 270px;height: 130px">
+                        <span>{{ zd.title }}</span>
+                        </a>
+                    </li>
+            {% endfor %}
+
+{#        <li>#}
+{#            <a href="/" title="个人网站做好了，百度不收录怎么办？来，看看他们怎么做的">#}
+{#                <img src="{% static 'boke/images/h2.jpg' %}" alt="个人网站做好了，百度不收录怎么办？来，看看他们怎么做的。">#}
+{#                 <span>个人网站做好了，百度不收录怎么办？来，看看他们怎么做的。#}
+{#                 </span>#}
+{#            </a>#}
+{#        </li>#}
+      </ul>
+    </div>
+    <!--headline end-->
+    <div class="clearblank"></div>
+{#    <div class="tab_box whitebg">#}
+{#      <div class="tab_buttons">#}
+{#        <ul>#}
+{##}
+{##}
+{##}
+{#</ul>#}
+{#      </div>#}
+{#    </div>#}
+    <!--tab_box end-->
+{#    <div class="zhuanti whitebg">#}
+{#      <h2 class="htitle"><span class="hnav"><a href="/">原创模板</a><a href="/">古典</a><a href="/">清新</a><a href="/">低调</a></span>精彩专题</h2>#}
+{#      <ul>#}
+{#        <li> <i class="ztpic"><a href="/" target="_blank"><img src="{% static 'boke/images/1.jpg' %}"></a></i> <b>个人博客模板《今夕何夕》-响应式个人...</b><span>个人博客模板《今夕何夕》，宽屏响应式个人博客模板，采用冷色系为主，固定导航栏和侧边栏，无缝滚动图片...</span><a href="" target="_blank" class="readmore">文章阅读</a> </li>#}
+{#        <li> <i class="ztpic"><a href="/" target="_blank"><img src="{% static 'boke/images/2.jpg' %}"></a></i> <b>个人博客模板《今夕何夕》-响应式个人...</b><span>个人博客模板《今夕何夕》，宽屏响应式个人博客模板，采用冷色系为主，固定导航栏和侧边栏，无缝滚动图片...</span><a href="" target="_blank" class="readmore">文章阅读</a> </li>#}
+{#        <li> <i class="ztpic"><a href="/" target="_blank"><img src="{% static 'boke/images/3.jpg' %}"></a></i> <b>个人博客模板《今夕何夕》-响应式个人...</b><span>个人博客模板《今夕何夕》，宽屏响应式个人博客模板，采用冷色系为主，固定导航栏和侧边栏，无缝滚动图片...</span><a href="" target="_blank" class="readmore">文章阅读</a> </li>#}
+{#        <li> <i class="ztpic"><a href="/" target="_blank"><img src="{% static 'boke/images/4.jpg' %}"></a></i> <b>个人博客模板《今夕何夕》-响应式个人...</b><span>个人博客模板《今夕何夕》，宽屏响应式个人博客模板，采用冷色系为主，固定导航栏和侧边栏，无缝滚动图片...</span><a href="" target="_blank" class="readmore">文章阅读</a> </li>#}
+{#        <li> <i class="ztpic"><a href="/" target="_blank"><img src="{% static 'boke/images/h2.jpg' %}"></a></i> <b>个人博客模板《今夕何夕》-响应式个人...</b><span>个人博客模板《今夕何夕》，宽屏响应式个人博客模板，采用冷色系为主，固定导航栏和侧边栏，无缝滚动图片...</span><a href="" target="_blank" class="readmore">文章阅读</a> </li>#}
+{#        <li> <i class="ztpic"><a href="/" target="_blank"><img src="{% static 'boke/images/h1.jpg' %}"></a></i> <b>个人博客模板《今夕何夕》-响应式个人...</b><span>个人博客模板《今夕何夕》，宽屏响应式个人博客模板，采用冷色系为主，固定导航栏和侧边栏，无缝滚动图片...</span><a href="" target="_blank" class="readmore">文章阅读</a> </li>#}
+{#      </ul>#}
+{#    </div>#}
+{#    <div class="ad whitebg"> <img src="{% static 'boke/images/longad.jpg' %}"> </div>#}
+    <div class="whitebg bloglist">
+      <h2 class="htitle">最新博文</h2>
+      <ul>
+
+
+
+
+          {% for wz in wenzhang %}
+                <li>
+                  <h3 class="blogtitle">
+                      <a href="{% url 'boke:article' wz.id %}" target="_blank">{{ wz.title }}</a>
+                  </h3>
+                  <span class="blogpic imgscale"><i><a href="{% url 'boke:list' wz.fenlei_id %}">{{ wz.fenlei }}</a></i>
+                      <a href="{% url 'boke:article' wz.id %}" title=""><img src="media/{{ wz.img }}" alt=""></a>
+                  </span>
+                    {% autoescape off %}
+                  <p class="blogtext">{{ wz.neirong|truncatechars_html:120 }} </p>
+                  {% endautoescape %}
+                  <p class="bloginfo"><i class="avatar"><img src="{% static 'boke/images/mayun.jpg' %}"></i><span>{{ wz.uesr }}</span><span>{{ wz.insert_time|date:"Y/m/d" }}</span>
+                      <span>【<a href="{% url 'boke:biaoqian' wz.biaoqian_id %}">{{ wz.biaoqian }}</a>】
+                      </span>
+                  </p>
+                  <a href="{% url 'boke:article' wz.id %}" class="viewmore">阅读更多</a> </li>
+          {% endfor %}
+
+
+{#        <li>#}
+{#          <h3 class="blogtitle"><a href="/" target="_blank">宝宝个人博客模板-亲子博客模板-宝宝个人网站模板</a></h3>#}
+{#          <span class="blogpic imgscale"><i><a href="/">最新模板</a></i><a href="/" title=""><img src="{% static 'boke/images/b02.jpg' %}" alt=""></a></span>#}
+{#          <p class="blogtext">这是一个记录宝宝成长点滴的个人博客，用作于宝宝博客，亲子博客，都是适用的。颜色为蓝色调，头部有飘动的卡通云，采用css3动画效果，布局简单，代码精简，还有相册功能，发图片，视频，时间轴可记录重要时刻，也可记录宝宝的生长发育状况，也可以统计宝宝博客网站的所有文章... </p>#}
+{#          <p class="bloginfo"><i class="avatar"><img src="{% static 'boke/images/avatar.jpg' %}"></i><span>杨青青</span><span>2018-10-28</span><span>【<a href="/">最新模板</a>】</span></p>#}
+{#          <a href="/" class="viewmore">阅读更多</a>#}
+{#        </li>#}
+
+      </ul>
+    </div>
+    <!--bloglist end--> 
+  </div>
+  <div class="rbox">
+    <div class="card">
+      <h2>我的名片</h2>
+      <p>网名：{{ user.wangming }}</p>
+      <p>职业：{{ user.zhiye }}</p>
+      <p>现居：{{ user.address }}</p>
+      <p>Email：{{ user.email }}</p>
+      <ul class="linkmore">
+        <li><a href="http://www.yangqq.com" target="_blank" class="iconfont icon-zhuye" title="网站地址"></a></li>
+        <li><a href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=HHh9cn95b3F1cHVye1xtbTJ-c3E" target="_blank" class="iconfont icon-youxiang" title="我的邮箱"></a></li>
+        <li><a href="http://wpa.qq.com/msgrd?v=3&uin=476847113&site=qq&menu=yes" target="_blank" class="iconfont icon---" title="QQ联系我"></a></li>
+        <li id="weixin"><a href="#" target="_blank" class="iconfont icon-weixin" title="关注我的微信"></a><i><img src="{% static 'boke/images/wx.png' %}"></i></li>
+      </ul>
+    </div>
+
+    <div class="whitebg paihang">
+      <h2 class="htitle">点击排行</h2>
+      <section class="topnews imgscale"><a href="#"><img src="{% static 'boke/images/h1.jpg' %}"><span>广告栏目</span></a></section>
+
+
+      <ul>
+         {% for ph in paihang %}
+            <li><i></i><a href="{% url 'boke:article' ph.id %}">{{ ph.title }}</a></li>
+          {% endfor %}
+      </ul>
+    </div>
+
+
+    <div class="whitebg tongji">
+   <div class="whitebg cloud">
+      <h2 class="htitle">标签云</h2>
+      <ul>
+          {% for fl in fenlei_all %}
+                        <a href="{% url 'boke:list' fl.id %}" >{{ fl.name }}</a>
+          {% endfor %}
+
+      </ul>
+    </div>
+
+    </div>
+    <div class="links whitebg">
+
+          <form action="{% url 'boke:search' 'text' %}" method="get" enctype="multipart/form-data">
+          <input type="text" name="text">
+          <input  type="submit">
+      </form>
+{#      <h2 class="htitle"><span class="sqlink"><a href="/">申请链接</a></span>友情链接</h2>#}
+{#      <ul>#}
+{#        <li><a href="http://www.yangqq.com" target="_blank">杨青青个人博客</a></li>#}
+{#      </ul>#}
+    </div>
+  </div>
+</article>
+{% endblock %}
