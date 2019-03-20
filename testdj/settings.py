@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'boke',
     'tinymce',
+    'xuexi',
+    'ceshi1',
 ]
 
 MIDDLEWARE = [
