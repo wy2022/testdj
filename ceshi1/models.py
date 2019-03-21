@@ -14,3 +14,12 @@ class user(models.Model):
 class register(models.Model):
     user =models.CharField(max_length=20)
     password =models.CharField(max_length=20)
+
+
+class uploadModel(models.Model):
+    title = models.CharField(max_length=20)
+    file = models.FileField(upload_to='file/%Y%m%d',validators=[validators.FileExtensionValidator(['txt','pdf'])])
+
+class imgModel(models.Model):
+    title = models.CharField(max_length=20)
+    img = models.ImageField(upload_to='file/img/%Y%m%d')

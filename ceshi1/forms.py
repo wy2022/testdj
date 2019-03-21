@@ -54,3 +54,14 @@ class RegisterForm(forms.ModelForm):
         model = register
         exclude =['password']
 
+class uploadForm(forms.ModelForm):
+    class Meta:
+        model = uploadModel
+        fields ='__all__'
+
+class imgForm(forms.ModelForm):
+
+    class Meta:
+        model = imgModel
+        fields='__all__'
+

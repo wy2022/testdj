@@ -38,3 +38,27 @@ class registerView(View):
             s =form.errors.get_json_data()
             print(json.dumps(s))
             return HttpResponse('fail')
+
+class UploadView(View):
+    def get(self,request):
+        return render(request,'ceshi1/upload.html')
+    def post(self,request):
+        form = uploadForm(request.POST,request.FILES)
+        if form.is_valid():
+            form.save()
+            return HttpResponse('ok')
+        else:
+            print(form.errors.get_json_data)
+            return HttpResponse('fail')
+
+class imgView(View):
+    def get(self,request):
+        return render(request,'ceshi1/img.html')
+    def post(self,request):
+        form = imgForm(request.POST,request.FILES)
+        if form.is_valid():
+            form.save()
+            return HttpResponse('success')
+        else:
+            print(form.errors.get_json_data)
+            return HttpResponse('fail')
