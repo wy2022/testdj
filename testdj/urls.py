@@ -21,4 +21,5 @@ urlpatterns = [
     path('boke/', include('boke.urls')),
     path('xuexi/', include('xuexi.urls')),
     path('ceshi1/', include('ceshi1.urls')),
+    path('blog/',include('blog.urls')),
 ]
